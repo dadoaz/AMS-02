@@ -1,0 +1,27 @@
+
+struct SumTF1 { 
+
+   SumTF1(const std::vector<TF1 *> & flist) : fFuncList(flist) {}
+   
+   double operator() (const double * x, const double *p) {
+      double result = 0;
+      for (unsigned int i = 0; i < fFuncList.size(); ++i) 
+         result += fFuncList[i]->EvalPar(x,p); 
+      return result; 
+   } 
+   
+   std::vector<TF1*> fFuncList; 
+      
+};
+
+std::vector<TF1 *> v;
+    v.push_back((TF1*)file2->Get("fGeminga"));
+    v.push_back((TF1*)file2->Get("fMonogem"));
+
+    std::vector<TF1 *> w;
+    w.push_back((TF1*)file3->Get("fGeminga"));
+    w.push_back((TF1*)file3->Get("fMonogem"));
+
+
+    TF1* Hoop_sum = new TF1("Hoop_sum", SumTF1(v), 0.5, 1500, 0);
+    TF1* Man_sum =  new TF1("Man_sum",  SumTF1(w), 0.5, 1500, 0);
