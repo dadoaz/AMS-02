@@ -1,0 +1,3 @@
+# ASDC Cosmic rays database, created 2021-03-24 14:16:43
+#Filename ; Particle ; Mission ; Reference ; Start Date ; Stop Date ; Notes
+e+_AMS_PRL2019_ekin_000__1__.xml ; e+ ; AMS-02 ; PRL 122 (2019) 041102 ; 2011-05-19T00:00:00 ; 2017-11-12T00:00:00 ;  ; e+_AMS_PRL2019_ekin.xml__Flux__Kinetic Energy__time_min=2011-05-19 00:00:00.0 ; time_max=2017-11-12 00:00:00.0
